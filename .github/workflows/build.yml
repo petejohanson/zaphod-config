@@ -1,0 +1,44 @@
+on: [push, pull_request, create, workflow_dispatch]
+
+name: Build
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: zmkfirmware/zmk-build-arm:2.4
+    name: Build Test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: config/
+      - name: Cache west modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-zephyr-modules
+        with:
+          path: |
+            modules/
+            tools/
+            zephyr/
+            bootloader/
+            zmk/
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('manifest-dir/west.yml') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Initialize workspace (west init)
+        run: west init -l config
+      - name: Update modules (west update)
+        run: west update
+      - name: Build (west build)
+        run: west build -s app -b zaphod -- -DZMK_CONFIG=/github/workspace/config
+      - name: Rename zmk.uf2
+        run: cp build/zephyr/zmk.uf2 zaphod.uf2
+      - name: Archive
+        uses: actions/upload-artifact@v2
+        with:
+          name: firmware
+          path: zaphod.uf2

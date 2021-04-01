@@ -34,7 +34,7 @@ jobs:
       - name: Update modules (west update)
         run: west update
       - name: Build (west build)
-        run: west build -s app -b zaphod -- -DZMK_CONFIG=/github/workspace/config
+        run: west build -s zmk -b zaphod -- -DZMK_CONFIG=/github/workspace/config
       - name: Rename zmk.uf2
         run: cp build/zephyr/zmk.uf2 zaphod.uf2
       - name: Archive

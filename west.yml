@@ -7,7 +7,7 @@ manifest:
   projects:
     - name: zmk
       remote: petejohanson
-      revision: zephyr-2.5-upgrade
+      revision: zephyr-2.5-lvgl-theme-fixes
       import: app/west.yml
   self:
     path: config

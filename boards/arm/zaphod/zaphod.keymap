@@ -53,6 +53,7 @@
         };
 
         other_layer {
+            label = "Other";
             bindings = <
                 &trans     &trans     &trans      &trans          &trans       &trans           &trans         &trans       &trans       &trans
                 &trans     &trans     &trans      &trans          &trans       &trans           &trans         &trans       &trans       &trans

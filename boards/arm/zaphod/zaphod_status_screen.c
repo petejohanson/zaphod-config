@@ -65,19 +65,11 @@ lv_obj_t *zmk_display_status_screen() {
     lv_cont_set_layout(label_cont, LV_LAYOUT_COLUMN_MID);
 
     dont_label = lv_label_create(label_cont, NULL);
-    // lv_label_set_align(dont_label, LV_LABEL_ALIGN_CENTER);
     lv_label_set_text(dont_label, "Don't");
 
     panic_label = lv_label_create(label_cont, NULL);
     lv_label_set_text(panic_label, "Panic");
-    // lv_label_set_align(panic_label, LV_LABEL_ALIGN_CENTER);
 
-    /*
-    lv_obj_align(dont_label, NULL, LV_ALIGN_IN_TOP_MID, 0,
-                 0);
-    lv_obj_align(panic_label, NULL, LV_ALIGN_OUT_BOTTOM_MID, 0,
-                 0);
-		 */
 
 #if IS_ENABLED(CONFIG_ZMK_WIDGET_LAYER_STATUS)
     zmk_widget_layer_status_init(&layer_status_widget, screen);

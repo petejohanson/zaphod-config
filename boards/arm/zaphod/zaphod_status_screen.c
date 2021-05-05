@@ -62,7 +62,7 @@ lv_obj_t *zmk_display_status_screen() {
     lv_obj_align(label_cont, NULL, LV_ALIGN_CENTER, 0,
                  0);
     lv_cont_set_fit(label_cont, LV_FIT_TIGHT);
-    lv_cont_set_layout(label_cont, LV_LAYOUT_COLUMN_MID);
+    lv_cont_set_layout(label_cont, LV_LAYOUT_CENTER);
 
     dont_label = lv_label_create(label_cont, NULL);
     lv_label_set_text(dont_label, "Don't");

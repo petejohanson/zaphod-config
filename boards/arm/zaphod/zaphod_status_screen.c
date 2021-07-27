@@ -13,6 +13,13 @@
 #include <logging/log.h>
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
+#if IS_ENABLED(CONFIG_ZAPHOD_BONGO_CAT)
+#include "zaphod_bongo_cat_widget.h"
+
+static struct zaphod_bongo_cat_widget bongo_widget;
+
+#endif
+
 #if IS_ENABLED(CONFIG_ZMK_WIDGET_BATTERY_STATUS)
 static struct zmk_widget_battery_status battery_status_widget;
 #endif
@@ -33,9 +40,11 @@ lv_style_t global_style;
 
 lv_obj_t *zmk_display_status_screen() {
     lv_obj_t *screen;
+#if !IS_ENABLED(CONFIG_ZAPHOD_BONGO_CAT)
     lv_obj_t *dont_label;
     lv_obj_t *panic_label;
-    lv_obj_t *label_cont;
+#endif
+    lv_obj_t *center_frame;
 
     lv_style_init(&global_style);
     lv_style_set_text_font(&global_style, LV_STATE_DEFAULT, &lv_font_montserrat_26);
@@ -57,19 +66,22 @@ lv_obj_t *zmk_display_status_screen() {
                  0);
 #endif
 
-    label_cont = lv_cont_create(screen, NULL);
-    lv_obj_set_auto_realign(label_cont, true);
-    lv_obj_align(label_cont, NULL, LV_ALIGN_CENTER, 0,
+    center_frame = lv_cont_create(screen, NULL);
+    lv_obj_set_auto_realign(center_frame, true);
+    lv_obj_align(center_frame, NULL, LV_ALIGN_CENTER, 0,
                  0);
-    lv_cont_set_fit(label_cont, LV_FIT_TIGHT);
-    lv_cont_set_layout(label_cont, LV_LAYOUT_CENTER);
+    lv_cont_set_fit(center_frame, LV_FIT_TIGHT);
+    lv_cont_set_layout(center_frame, LV_LAYOUT_CENTER);
 
-    dont_label = lv_label_create(label_cont, NULL);
+#if IS_ENABLED(CONFIG_ZAPHOD_BONGO_CAT)
+    zaphod_bongo_cat_widget_init(&bongo_widget, center_frame);
+#else
+    dont_label = lv_label_create(center_frame, NULL);
     lv_label_set_text(dont_label, "Don't");
 
-    panic_label = lv_label_create(label_cont, NULL);
+    panic_label = lv_label_create(center_frame, NULL);
     lv_label_set_text(panic_label, "Panic");
-
+#endif // IS_ENABLED(CONFIG_ZAPHOD_BONGO_CAT)
 
 #if IS_ENABLED(CONFIG_ZMK_WIDGET_LAYER_STATUS)
     zmk_widget_layer_status_init(&layer_status_widget, screen);

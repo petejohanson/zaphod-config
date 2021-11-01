@@ -1,0 +1,24 @@
+# SPDX-License-Identifier: MIT
+
+if ZMK_DISPLAY
+
+menuconfig ZAPHOD_BONGO_CAT
+    bool "Show WPM bongo cat"
+    select ZMK_WPM
+    select LVGL_USE_IMG
+    select LVGL_USE_ANIMATION
+
+if ZAPHOD_BONGO_CAT
+
+config ZAPHOD_BONGO_CAT_IDLE_LIMIT
+    int "Upper limit for WPM for showing idle animation"
+    default 30
+
+config ZAPHOD_BONGO_CAT_SLOW_LIMIT
+    int "Upper limit for WPM for showing slow typing image"
+    default 60
+
+endif # ZAPHOD_BONGO_CAT
+
+
+endif

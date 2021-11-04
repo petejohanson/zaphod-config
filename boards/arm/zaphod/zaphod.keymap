@@ -13,7 +13,8 @@
 #define OTH_L 2
 #define NUM_L 3
 #define SYM_L 4
-#define FUN_L 5
+#define MED_L 5
+#define FUN_L 6
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
@@ -22,19 +23,18 @@
     combos {
         compatible = "zmk,combos";
 
+        med_mo {
+	    timeout-ms = <50>;
+            key-positions = <30 31>;
+            bindings = <&mo MED_L>;
+        };
+
         fn_mo {
 	    timeout-ms = <50>;
             key-positions = <32 33>;
             bindings = <&mo FUN_L>;
         };
 
-	/*
-        caps_word_combo {
-	    timeout-ms = <50>;
-            key-positions = <13 16>;
-            bindings = <&caps_word>;
-        };
-	*/
     };
 
     behaviors {
@@ -98,6 +98,16 @@
                 &kp COLON    &kp LS(N4)  &kp LS(N5)  &kp LS(N6) &kp PLUS        &trans &trans   &trans    &trans    &trans
                 &kp TILDE    &kp LS(N1)  &kp LS(N2)  &kp LS(N3) &kp LS(BSLH)    &trans &trans   &trans    &trans    &trans
                                                    &kp LS(N0) &kp UNDER         &trans &trans
+            >;
+        };
+
+        media_layer {
+            label = "Media";
+            bindings = <
+                &trans	   &trans     &trans      &trans          &trans       &trans           &trans         &trans       &trans       &trans
+                &trans     &trans     &trans      &trans          &trans       &trans           &kp C_PREV     &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT
+                &trans     &trans     &trans      &trans          &trans       &trans           &trans         &trans       &trans       &trans
+                                                  &trans          &trans       &kp C_STOP       &kp C_PLAY_PAUSE
             >;
         };
 

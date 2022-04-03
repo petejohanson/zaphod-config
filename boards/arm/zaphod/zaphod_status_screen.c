@@ -52,7 +52,7 @@ lv_obj_t *zmk_display_status_screen() {
     lv_style_set_text_line_space(&global_style, LV_STATE_DEFAULT, 1);
 
     screen = lv_obj_create(NULL, NULL);
-    lv_obj_add_style(screen, LV_LABEL_PART_MAIN, &global_style);
+    lv_obj_add_style(screen, LV_OBJ_PART_MAIN, &global_style);
 
 #if IS_ENABLED(CONFIG_ZMK_WIDGET_BATTERY_STATUS)
     zmk_widget_battery_status_init(&battery_status_widget, screen);

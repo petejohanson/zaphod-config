@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: zmkfirmware/zmk-build-arm:2.4
+      image: zmkfirmware/zmk-build-arm:stable
     name: Build Test
     steps:
       - name: Checkout
@@ -39,9 +39,6 @@ jobs:
         run: west list
       - name: Build (west build)
         run: west build -s zmk/app -b zaphod -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
-      - name: Zaphod DTS File
-        if: ${{ always() }}
-        run: cat -n build/zephyr/zaphod.dts.pre.tmp
       - name: Zaphod .config
         if: ${{ always() }}
         run: cat -n build/zephyr/.config

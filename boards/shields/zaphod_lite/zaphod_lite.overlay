@@ -21,7 +21,7 @@
 		ngpios = <8>;
 	};
 
-	ls0xx@1 {
+	ls0xx: ls0xx@1 {
 		compatible = "sharp,ls0xx";
 		label = "DISPLAY";
 		spi-max-frequency = <2000000>;
@@ -43,9 +43,7 @@
 	chosen {
 		zmk,kscan = &kscan;
 		zmk,matrix_transform = &transform;
-		/*
-		zephyr,console = &zaphod_cdc_acm_uart;
-		*/
+		zephyr,display = &ls0xx;
 	};
 
 	transform: transform {

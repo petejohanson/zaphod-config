@@ -15,6 +15,7 @@ jobs:
           path: config/
       - name: Cache west modules
         uses: actions/cache@v2
+        if: false
         env:
           cache-name: cache-zephyr-modules
         with:

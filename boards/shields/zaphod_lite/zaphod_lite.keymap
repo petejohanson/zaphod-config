@@ -49,7 +49,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "homerow mods";
             #binding-cells = <2>;
-            tapping_term_ms = <200>;
+            tapping_term_ms = <260>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -75,7 +75,7 @@
                 &kp Q      &kp W      &kp F       &kp P          &kp B         &kp J            &kp L          &kp U       &kp Y      &kp QUOT
                 &hm LGUI A &hm LALT R &hm LCTRL S &hm LSHFT T    &kp G         &kp M            &hm RSHFT N    &hm RCTRL E &hm LALT I &hm LGUI O
                 &kp Z      &kp X      &kp C       &kp D          &kp V         &kp K            &kp H          &kp COMMA   &kp DOT    &kp FSLH     
-                                                  &lt NAV_L TAB  &lt OTH_L RET &lt NUM_L SPACE  &lt SYM_L BKSP
+                                                  &lt NAV_L SPACE  &lt OTH_L TAB &lt SYM_L RET  &lt NUM_L BKSP
             >;
         };
 #endif
@@ -83,9 +83,9 @@
         nav_layer {
             label = "Nav";
             bindings = <
-                &trans     &trans     &trans      &trans          &trans       &trans           &trans         &trans      &trans     &trans
-                &trans     &trans     &trans      &trans          &trans       &trans           &kp LARW       &kp DARW    &kp UARW   &kp RARW
-                &trans     &trans     &trans      &trans          &trans       &trans           &kp HOME       &kp PG_DN   &kp PG_UP  &kp END
+                &trans     &trans     &trans      &trans          &trans       &kp LS(LG(Z))    &kp LG(V)      &kp LG(C)   &kp LG(X)  &kp LG(Z)
+                &trans     &trans     &trans      &trans          &trans       &kp LC(LARW)     &kp LARW       &kp DARW    &kp UARW   &kp RARW
+                &trans     &trans     &trans      &trans          &trans       &kp LC(RARW)     &kp HOME       &kp PG_DN   &kp PG_UP  &kp END
                                                   &trans          &trans       &kp ESC          &kp DEL
             >;
         };
@@ -93,7 +93,7 @@
         other_layer {
             label = "Other";
             bindings = <
-                &trans	   &trans     &trans      &trans          &trans       &trans           &trans         &trans       &trans       &bt BT_CLR
+                &trans	   &trans     &trans      &trans          &trans       &out OUT_TOG     &trans         &trans       &trans       &bt BT_CLR
                 &trans     &trans     &trans      &trans          &trans       &trans           &trans         &trans       &trans       &trans
                 &trans     &trans     &trans      &trans          &trans       &bt BT_SEL 0     &bt BT_SEL 1   &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
                                                   &trans          &trans       &trans           &trans

@@ -7,7 +7,7 @@ manifest:
   projects:
     - name: zmk
       remote: petejohanson
-      revision: seeeduino-xiao-ble-add-settings-storage
+      revision: boards/seeeduino-xiao-ble-add-settings-storage
       import: app/west.yml
   self:
     path: config

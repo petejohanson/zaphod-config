@@ -19,6 +19,7 @@
 		zephyr,display = &ls0xx;
 		zmk,kscan = &kscan;
 		zmk,matrix_transform = &transform;
+		zmk,battery = &vbatt;
 		zephyr,console = &cdc_acm_uart;
 	};
 
@@ -30,7 +31,7 @@
 		};
 	};
 
-	vbatt {
+	vbatt: vbatt {
 		compatible = "zmk,battery-voltage-divider";
 		label = "BATTERY";
 		io-channels = <&adc 7>;

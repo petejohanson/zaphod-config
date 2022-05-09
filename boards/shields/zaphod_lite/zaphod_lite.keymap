@@ -49,7 +49,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "homerow mods";
             #binding-cells = <2>;
-            tapping_term_ms = <260>;
+            tapping_term_ms = <220>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -84,8 +84,8 @@
             label = "Nav";
             bindings = <
                 &trans     &trans     &trans      &trans          &trans       &kp LC(Y)        &kp LC(V)      &kp LC(C)   &kp LC(X)  &kp LC(Z)
-                &trans     &trans     &trans      &trans          &trans       &kp LC(LARW)     &kp LARW       &kp DARW    &kp UARW   &kp RARW
-                &trans     &trans     &trans      &trans          &trans       &kp LC(RARW)     &kp HOME       &kp PG_DN   &kp PG_UP  &kp END
+                &trans     &trans     &trans      &trans          &trans       &kp LG(LARW)     &kp LARW       &kp DARW    &kp UARW   &kp RARW
+                &trans     &trans     &trans      &trans          &trans       &kp LG(RARW)     &kp HOME       &kp PG_DN   &kp PG_UP  &kp END
                                                   &trans          &trans       &kp ESC          &kp DEL
             >;
         };

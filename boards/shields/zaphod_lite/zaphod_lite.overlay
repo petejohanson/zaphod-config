@@ -69,8 +69,8 @@
 		diode-direction = "col2row";
 
 		col-gpios
-			= <&xiao_d 4 (GPIO_ACTIVE_HIGH)>
-			, <&xiao_d 5 (GPIO_ACTIVE_HIGH)>
+			= <&xiao_d 4   (GPIO_ACTIVE_HIGH)>
+			, <&xiao_d 5   (GPIO_ACTIVE_HIGH)>
 			, <&expander 0 (GPIO_ACTIVE_HIGH)>
 			, <&expander 1 (GPIO_ACTIVE_HIGH)>
 			, <&expander 2 (GPIO_ACTIVE_HIGH)>

@@ -10,13 +10,13 @@
 	status = "okay";
 
 	cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>, <&xiao_d 6 GPIO_ACTIVE_HIGH>;
-	expander: mcp23sxx@0 {
-		compatible = "microchip,mcp23sxx";
+	shift_reg: 595@0 {
+		compatible = "zmk,gpio-595";
 		status = "okay";
 		gpio-controller;
-		spi-max-frequency = <800000>;
+		spi-max-frequency = <200000>;
 		reg = <0>;
-		label = "MCP23S08";
+		label = "4HC595";
 		#gpio-cells = <2>;
 		ngpios = <8>;
 	};
@@ -69,16 +69,16 @@
 		diode-direction = "col2row";
 
 		col-gpios
-			= <&xiao_d 4   (GPIO_ACTIVE_HIGH)>
-			, <&xiao_d 5   (GPIO_ACTIVE_HIGH)>
-			, <&expander 0 (GPIO_ACTIVE_HIGH)>
-			, <&expander 1 (GPIO_ACTIVE_HIGH)>
-			, <&expander 2 (GPIO_ACTIVE_HIGH)>
-			, <&expander 3 (GPIO_ACTIVE_HIGH)>
-			, <&expander 5 (GPIO_ACTIVE_HIGH)>
-			, <&expander 4 (GPIO_ACTIVE_HIGH)>
-			, <&expander 7 (GPIO_ACTIVE_HIGH)>
-			, <&expander 6 (GPIO_ACTIVE_HIGH)>
+			= <&xiao_d 4 (GPIO_ACTIVE_HIGH)>
+			, <&xiao_d 5 (GPIO_ACTIVE_HIGH)>
+			, <&shift_reg 1 (GPIO_ACTIVE_HIGH)>
+			, <&shift_reg 2 (GPIO_ACTIVE_HIGH)>
+			, <&shift_reg 0 (GPIO_ACTIVE_HIGH)>
+			, <&shift_reg 3 (GPIO_ACTIVE_HIGH)>
+			, <&shift_reg 5 (GPIO_ACTIVE_HIGH)>
+			, <&shift_reg 4 (GPIO_ACTIVE_HIGH)>
+			, <&shift_reg 7 (GPIO_ACTIVE_HIGH)>
+			, <&shift_reg 6 (GPIO_ACTIVE_HIGH)>
 			;
 		row-gpios
 			= <&xiao_d 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>

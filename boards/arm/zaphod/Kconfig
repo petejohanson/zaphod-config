@@ -18,11 +18,11 @@ if ZAPHOD_BONGO_CAT
 
 config ZAPHOD_BONGO_CAT_IDLE_LIMIT
     int "Upper limit for WPM for showing idle animation"
-    default 30
+    default 15
 
 config ZAPHOD_BONGO_CAT_SLOW_LIMIT
     int "Upper limit for WPM for showing slow typing image"
-    default 60
+    default 30
 
 endif # ZAPHOD_BONGO_CAT
 

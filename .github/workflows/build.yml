@@ -48,7 +48,7 @@ jobs:
         run: cat -n build/zaphod/zephyr/.config
       - name: Rename zmk.uf2
         run: |
-          cp build/zaphod/zephyr/zmk.uf2 seeeduino_xiao_zaphod_lite.uf2
+          cp build/zaphod/zephyr/zmk.uf2 zaphod.uf2
           cp build/zaphod_lite_xiao/zephyr/zmk.uf2 seeeduino_xiao_zaphod_lite.uf2
           cp build/zaphod_lite_xiao_ble/zephyr/zmk.uf2 seeeduino_xiao_ble_zaphod_lite.uf2
       - name: Archive

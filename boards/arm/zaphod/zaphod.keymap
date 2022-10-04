@@ -111,7 +111,7 @@
         combq_ae {
 	    timeout-ms = <50>;
             key-positions = <3 13>;
-            bindings = <&kp DE_ADIA>
+            bindings = <&kp DE_ADIA>;
         };
 
         combq_oe {

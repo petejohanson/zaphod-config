@@ -70,6 +70,30 @@
             key-positions = <PINKY_L INDEX_L>;
             bindings = <&kp LGUI>;
         };
+	
+        combo_lctrlalt {
+	    timeout-ms = <50>;
+            key-positions = <RING_L MIDDLE_L INDEX_L>;
+            bindings = <&kp LCTRL &kp LALT>;
+        };
+	
+        combo_lctrlgui {
+	    timeout-ms = <50>;
+            key-positions = <PINKY_L MIDDLE_L INDEX_L>;
+            bindings = <&kp LCTRL &kp LGUI>;
+        };
+	
+        combo_laltgui {
+	    timeout-ms = <50>;
+            key-positions = <PINKY_L RING_L INDEX_L>;
+            bindings = <&kp LALT &kp LGUI>;
+        };
+	
+        combo_lctrlaltgui {
+	    timeout-ms = <50>;
+            key-positions = <PINKY_L RING_L INDEX_L>;
+            bindings = <&kp LCTRL &kp LALT &kp LGUI>;
+        };
 
         combo_rctrl {
 	    timeout-ms = <50>;
@@ -88,15 +112,39 @@
             key-positions = <PINKY_R INDEX_R>;
             bindings = <&kp LGUI>;
         };
+	
+        combo_rctrlalt {
+	    timeout-ms = <50>;
+            key-positions = <RING_R MIDDLE_R INDEX_R>;
+            bindings = <&kp LCTRL &kp LALT>;
+        };
+	
+        combo_rctrlgui {
+	    timeout-ms = <50>;
+            key-positions = <PINKY_R MIDDLE_R INDEX_R>;
+            bindings = <&kp LCTRL &kp LGUI>;
+        };
+	
+        combo_raltgui {
+	    timeout-ms = <50>;
+            key-positions = <PINKY_R RING_R INDEX_R>;
+            bindings = <&kp LALT &kp LGUI>;
+        };
+	
+        combo_rctrlaltgui {
+	    timeout-ms = <50>;
+            key-positions = <PINKY_R RING_R INDEX_R>;
+            bindings = <&kp LCTRL &kp LALT &kp LGUI>;
+        };
 
 
-        number_lock {
+        combo_number_lock {
 	    timeout-ms = <50>;
             key-positions = <THUMB_4 INDEX_R>;
             bindings = <&to SNUM_L>;
         };
 
-        adjust_oneshot {
+        combo_adjust_oneshot {
 	    timeout-ms = <50>;
             key-positions = <THUMB_4 MIDDLE_R>;
             bindings = <&sl ADJ_L>;
@@ -146,7 +194,7 @@
             bindings = <
                 &kp ESC         &kp DE_U   &kp DE_DOT     &kp DE_COMM    &kp BSPC       &kp DE_P         &kp DE_C       &kp DE_L       &kp DE_M   &kp DE_F
                 &kp DE_H        &kp DE_I   &lt SYM_L DE_E &kp DE_A       &kp DE_O       &kp DE_D         &kp DE_T       &lt SYM_L DE_R &kp DE_N   &kp DE_S
-                &lt XCV_L DE_K  &kp DE_B   &kp DE_Z       &kp DE_X       &kp DE_Q       &kp DE_J         &kp DE_G       &kp DE_W       &kp DE_V   &kp DE_Y
+                &lt XCV_L DE_K  &kp DE_B   &kp DE_Y       &kp DE_X       &kp DE_Q       &kp DE_J         &kp DE_G       &kp DE_W       &kp DE_V   &kp DE_Z
                                                           &kp LSHIFT     &kp SPC        &kp ENTER        &mo NUM_L
             >;
         };

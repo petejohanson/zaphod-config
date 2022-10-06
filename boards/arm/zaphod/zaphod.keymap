@@ -39,7 +39,7 @@
 #define THUMB_4     33
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
-&lt { quick_tap_ms = <200>; };
+// &lt { quick_tap_ms = <200>; };
 
 /*   34 KEY MATRIX / LAYOUT MAPPING
     ╭────────────────────┬────────────────────╮
@@ -181,7 +181,8 @@
             label = "homerow mods";
             #binding-cells = <2>;
             tapping_term_ms = <200>;
-            flavor = "tap-preferred";
+	    quick-tap-ms = <100>;
+	    flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
     };
@@ -200,7 +201,7 @@
         };
 
         num_layer {
-            label = "NUMBERS";
+            label = "NUM";
             bindings = <
                 &kp ESC    &kp ENTER  &kp UP         &kp DEL        &kp BSPC       &kp DE_COLN      &kp DE_7      &kp DE_8        &kp DE_9    &kp DE_UNDS 
                 &kp HOME   &kp LEFT   &kp DOWN       &kp RIGHT      &kp END        &kp DE_0         &kp DE_4      &kp DE_5        &kp DE_6    &kp DE_MINS 
@@ -210,7 +211,7 @@
         };
 
         sticky_num_layer {
-            label = "SNUMBERS";
+            label = "NUM S";
             bindings = <
                 &kp ESC    &kp ENTER  &kp UP         &kp DEL        &kp BSPC       &kp DE_COLN      &kp DE_7      &kp DE_8        &kp DE_9    &kp DE_UNDS 
                 &kp HOME   &kp LEFT   &kp DOWN       &kp RIGHT      &kp END        &kp DE_0         &kp DE_4      &kp DE_5        &kp DE_6    &kp DE_MINS 
@@ -230,7 +231,7 @@
         };
 
         sym_layer {
-            label = "SYMBOLS";
+            label = "SYM";
             bindings = <
                 &kp DE_CIRC &kp DE_AMPR &kp DE_QUOT &kp DE_DQUO &kp DE_EXLM &kp DE_EQL  &kp DE_LCBR &kp DE_RCBR &kp DE_SUP2 &kp DE_SUP3
                 &kp DE_BSLS &kp DE_SLSH &kp DE_LPRN &kp DE_RPRN &kp DE_QUES &kp DE_MINS &kp DE_LABK &kp DE_RABK &kp DE_AT   &kp DE_PERC

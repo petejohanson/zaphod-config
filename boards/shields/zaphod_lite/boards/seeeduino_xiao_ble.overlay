@@ -1,0 +1,4 @@
+
+&xiao_spi {
+	miso-pin = <6>;
+};

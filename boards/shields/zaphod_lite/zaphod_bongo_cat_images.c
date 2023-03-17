@@ -477,3 +477,4 @@ const lv_img_dsc_t slow_img = {
   .data = slow_img_map,
 };
 
+ 

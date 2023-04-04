@@ -93,7 +93,7 @@
 
         fn_mo {
 	    timeout-ms = <50>;
-            key-positions = <31 32>;
+            key-positions = <30 33>;
             layers = <DEF_L FUN_L>;
             bindings = <&mo FUN_L>;
         };

@@ -91,13 +91,6 @@
             bindings = <&kp PIPE>;
         };
 
-        fn_mo {
-	    timeout-ms = <50>;
-            key-positions = <30 33>;
-            layers = <DEF_L FUN_L>;
-            bindings = <&mo FUN_L>;
-        };
-
     };
 
     behaviors {
@@ -120,7 +113,7 @@
                 &kp Q           &kp W           &kp F           &kp P           &kp B           &kp J           &kp L           &kp U           &kp Y           &kp SEMI                            
                 &hm LGUI A      &hm LALT R      &hm LSHFT S     &hm LCTRL T     &kp G           &kp M           &hm RCTRL N     &hm RSHFT E     &hm LALT I      &hm LGUI O
                 &kp Z           &kp X           &kp C           &kp D           &kp V           &kp K           &kp H           &kp COMMA       &kp DOT         &kp FSLH
-                                                                &kp TAB         &lt NAV_L SPACE &lt SYM_L RET   &kp BKSP
+                                                                &lt FUN_L TAB   &lt NAV_L SPACE &lt SYM_L RET   &kp BKSP
             >;
         };
 

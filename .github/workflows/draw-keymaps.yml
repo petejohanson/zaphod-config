@@ -8,6 +8,8 @@ on:
 
 jobs:
   draw:
+    permissions:
+      contents: write
     uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
     with:
       keymap_patterns: "*.keymap"        # path to the keymaps to parse

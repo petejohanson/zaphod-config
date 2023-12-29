@@ -199,9 +199,9 @@
         default_layer {
             label = "BASE";
             bindings = <
-                &kp ESC         &kp DE_U   &kp DE_DOT     &kp DE_COMM    &kp BSPC       &kp DE_P         &kp DE_C       &kp DE_L       &kp DE_M   &kp DE_F
+                &kp DE_B        &kp DE_U   &kp DE_DOT     &kp DE_COMM    &kp DE_UDIA    &kp DE_P         &kp DE_C       &kp DE_L       &kp DE_M   &kp DE_F
                 &kp DE_H        &kp DE_I   &lt SYM_L DE_E &kp DE_A       &kp DE_O       &kp DE_D         &kp DE_T       &lt SYM_L DE_R &kp DE_N   &kp DE_S
-                &lt XCV_L DE_K  &kp DE_B   &kp DE_Y       &kp DE_X       &kp DE_Q       &kp DE_J         &kp DE_G       &kp DE_W       &kp DE_V   &kp DE_Z
+                &lt XCV_L DE_K  &kp DE_Y   &kp DE_ODIA    &kp DE_ADIA    &kp DE_Q       &kp DE_J         &kp DE_G       &kp DE_W       &kp DE_V   &kp DE_Z
                                                           &kp LSHIFT     &kp SPC        &kp ENTER        &mo NUM_L
             >;
         };
@@ -219,8 +219,8 @@
         sticky_num_layer {
             label = "NUM S";
             bindings = <
-                &kp ESC    &kp ENTER  &kp UP         &kp DEL        &kp BSPC       &kp DE_COLN      &kp DE_7      &kp DE_8        &kp DE_9    &kp DE_UNDS 
-                &kp HOME   &kp LEFT   &kp DOWN       &kp RIGHT      &kp END        &kp DE_0         &kp DE_4      &kp DE_5        &kp DE_6    &kp DE_MINS 
+                &kp ESC    &kp ENTER  &kp UP         &kp DEL        &kp BSPC       &kp DE_X         &kp DE_7      &kp DE_8        &kp DE_9    &kp DE_UNDS 
+                &kp HOME   &kp LEFT   &kp DOWN       &kp RIGHT      &kp END        &kp DE_0         &kp DE_4      &kp DE_5        &kp DE_6    &kp DE_SS 
                 &kp UNDO   &kp TAB    &kp INS        &kp PGUP       &kp PGDN       &kp DE_DOT       &kp DE_1      &kp DE_2        &kp DE_3    &kp DE_COMM
                                                      &to BASE_L     XXXXXXX        _______          XXXXXXX
             >;
@@ -242,7 +242,7 @@
                 &kp DE_CIRC &kp DE_AMPR &kp DE_QUOT &kp DE_DQUO &kp DE_EXLM &kp DE_EQL  &kp DE_LCBR &kp DE_RCBR &kp DE_SUP2 &kp DE_SUP3
                 &kp DE_BSLS &kp DE_SLSH &kp DE_LPRN &kp DE_RPRN &kp DE_QUES &kp DE_MINS &kp DE_LABK &kp DE_RABK &kp DE_AT   &kp DE_PERC
                 &kp DE_PIPE &kp DE_TILD &kp DE_LBRC &kp DE_RBRC &kp DE_HASH &kp DE_UNDS &kp DE_EURO &kp DE_DLR  &kp DE_DEG  &kp DE_MICR
-                                                    &kp XXXXXXX &kp DE_ASTR &kp DE_PLUS &kp XXXXXXX
+                                                    XXXXXXX     &kp DE_ASTR &kp DE_PLUS XXXXXXX
             >;
         };
 

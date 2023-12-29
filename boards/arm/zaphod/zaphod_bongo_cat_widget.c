@@ -7,7 +7,7 @@
 #include <zmk/event_manager.h>
 #include <zmk/events/wpm_state_changed.h>
 
-#include <logging/log.h>
+#include <zephyr/logging/log.h>
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 #include "zaphod_bongo_cat_widget.h"
@@ -48,7 +48,7 @@ const void* fast_images[] = {
 	&fast_img2,
 };
 
-void set_img_src(void *var, lv_anim_value_t val) {
+void set_img_src(void *var, int32_t val) {
     lv_obj_t *img = (lv_obj_t *)var;
     lv_img_set_src(img, images[val]);
 }
@@ -95,10 +95,10 @@ void state_widget_wpm(struct zaphod_bongo_cat_widget *widget, int wpm) {
 }
 
 int zaphod_bongo_cat_widget_init(struct zaphod_bongo_cat_widget *widget, lv_obj_t *parent) {
-    widget->obj = lv_img_create(parent, NULL);
+    widget->obj = lv_img_create(parent);
     
 
-    lv_img_set_auto_size(widget->obj, true);
+    lv_obj_set_size(widget->obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
     state_widget_wpm(widget, 0);
 
     sys_slist_append(&widgets, &widget->node);

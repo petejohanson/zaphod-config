@@ -21,71 +21,85 @@
     combos {
         compatible = "zmk,combos";
 
-        lbrc_kp {
-	    timeout-ms = <50>;
+        combo_lbkt {
+	        timeout-ms = <50>;
             key-positions = <10 11>;
-            layers = <DEF_L>;
-            bindings = <&kp LBRC>;
-        };
-
-        lbkt_kp {
-	    timeout-ms = <50>;
-            key-positions = <11 12>;
             layers = <DEF_L>;
             bindings = <&kp LBKT>;
         };
 
-        lpar_kp {
-	    timeout-ms = <50>;
-            key-positions = <12 13>;
+        combo_lpar {
+	        timeout-ms = <50>;
+            key-positions = <11 12>;
             layers = <DEF_L>;
             bindings = <&kp LPAR>;
         };
 
-        rpar_kp {
-	    timeout-ms = <50>;
+        combo_lbrc {
+	        timeout-ms = <50>;
+            key-positions = <12 13>;
+            layers = <DEF_L>;
+            bindings = <&kp LBRC>;
+        };
+
+        combo_sqt {
+            timeout-ms = <50>;
+            key-positions = <12 17>;
+            layers = <DEF_L>;
+            bindings = <&kp SQT>;
+        };
+
+        combo_dqt {
+            timeout-ms = <50>;
+            key-positions = <13 16>;
+            layers = <DEF_L>;
+            bindings = <&kp DQT>;
+        };
+
+        combo_rbrc {
+	        timeout-ms = <50>;
             key-positions = <16 17>;
-            layers = <DEF_L>;
-            bindings = <&kp RPAR>;
-        };
-
-        rbkt_kp {
-	    timeout-ms = <50>;
-            key-positions = <17 18>;
-            layers = <DEF_L>;
-            bindings = <&kp RBKT>;
-        };
-
-        rbrc_kp {
-	    timeout-ms = <50>;
-            key-positions = <18 19>;
             layers = <DEF_L>;
             bindings = <&kp RBRC>;
         };
 
-        tilde_kp {
-	    timeout-ms = <50>;
+        combo_rpar {
+	        timeout-ms = <50>;
+            key-positions = <17 18>;
+            layers = <DEF_L>;
+            bindings = <&kp RPAR>;
+        };
+
+        combo_rbkt {
+	        timeout-ms = <50>;
+            key-positions = <18 19>;
+            layers = <DEF_L>;
+            bindings = <&kp RBKT>;
+        };
+
+        combo_tilde {
+	        timeout-ms = <50>;
             key-positions = <21 22>;
             layers = <DEF_L>;
             bindings = <&kp TILDE>;
         };
 
-        grave_kp {
-	    timeout-ms = <50>;
+        combo_grave {
+	        timeout-ms = <50>;
             key-positions = <22 23>;
             layers = <DEF_L>;
             bindings = <&kp GRAVE>;
         };
 
-        bslh_kp {
-	    timeout-ms = <50>;
+        combo_bslh {
+	        timeout-ms = <50>;
             key-positions = <26 27>;
             layers = <DEF_L>;
             bindings = <&kp BSLH>;
         };
 
-        pipe_kp {
-	    timeout-ms = <50>;
+        combo_pipe {
+	        timeout-ms = <50>;
             key-positions = <27 28>;
             layers = <DEF_L>;
             bindings = <&kp PIPE>;
@@ -132,7 +146,7 @@
             bindings = <
                 &kp EXCL        &kp AT          &kp HASH        &kp DOLLAR      &kp PERCENT     &kp BACKSLASH   &kp N7          &kp N8          &kp N9          &kp COMMA
                 &kp PLUS        &kp EQUAL       &kp UNDERSCORE  &kp MINUS       &kp CARET       &kp N0          &kp N4          &kp N5          &kp N6          &kp DOT
-                &kp TILDE       &kp LS(N1)      &kp LS(N2)      &kp STAR        &kp AMPS        &kp SEMICOLON   &kp N1          &kp N2          &kp N3          &kp SLASH
+                &kp TILDE       &kp LT          &kp GT          &kp STAR        &kp AMPS        &kp SEMICOLON   &kp N1          &kp N2          &kp N3          &kp SLASH
                                                                 &kp BKSP        &kp SPACE       &trans          &trans
             >;
         };

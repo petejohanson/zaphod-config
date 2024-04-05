@@ -16,14 +16,12 @@
 		gpio-controller;
 		spi-max-frequency = <200000>;
 		reg = <0>;
-		label = "4HC595";
 		#gpio-cells = <2>;
 		ngpios = <8>;
 	};
 
 	ls0xx: ls0xx@1 {
 		compatible = "sharp,ls0xx";
-		label = "DISPLAY";
 		spi-max-frequency = <2000000>;
 		reg = <1>;
 		width = <144>;
@@ -61,7 +59,7 @@
 	
 	kscan: kscan {
 		compatible = "zmk,kscan-gpio-matrix";
-		label = "KSCAN";
+		wakeup-source;
 
 		debounce-press-ms = <1>;
 		debounce-release-ms = <5>;

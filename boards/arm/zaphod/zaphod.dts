@@ -48,13 +48,11 @@
 		compatible = "gpio-leds";
 		blue_led: led_0 {
 			gpios = <&gpio1 9 GPIO_ACTIVE_HIGH>;
-			label = "Blue LED";
 		};
 	};
 
 	vbatt: vbatt {
 		compatible = "zmk,battery-voltage-divider";
-		label = "BATTERY";
 		io-channels = <&adc 7>;
 		output-ohms = <2000000>;
 		full-ohms = <(2000000 + 806000)>;
@@ -75,7 +73,8 @@
 	
 	kscan: kscan {
 		compatible = "zmk,kscan-gpio-matrix";
-		label = "KSCAN";
+		wakeup-source;
+
 		debounce-press-ms = <1>;
 		debounce-release-ms = <5>;
 
@@ -130,7 +129,6 @@
 
 	ls0xx: ls0xx@0 {
 		compatible = "sharp,ls0xx";
-		label = "DISPLAY";
 		spi-max-frequency = <2000000>;
 		reg = <0>;
 		width = <144>;
@@ -144,7 +142,6 @@
 	compatible = "nordic,nrf-usbd";
 	cdc_acm_uart: cdc_acm_uart {
 		compatible = "zephyr,cdc-acm-uart";
-		label = "CDC_ACM_0";
 	};
 };
 
@@ -160,21 +157,17 @@
 		#size-cells = <1>;
 
 		sd_partition: partition@0 {
-			label = "mbr";
 			reg = <0x00000000 0x00001000>;
 		};
 		code_partition: partition@1000 {
-			label = "code_partition";
 			reg = <0x00001000 0x000d3000>;
 		};
 
 		storage_partition: partition@d4000 {
-			label = "storage";
 			reg = <0x000d4000 0x00020000>;
 		};
 
 		boot_partition: partition@f4000 {
-			label = "adafruit_boot";
 			reg = <0x000f4000 0x0000c000>;
 		};
 	};

@@ -1,0 +1,12 @@
+file_format: "1"
+id: zaphod
+name: Zaphod
+type: board
+arch: arm
+features:
+  - keys
+  - display
+  - studio
+outputs:
+  - usb
+  - ble

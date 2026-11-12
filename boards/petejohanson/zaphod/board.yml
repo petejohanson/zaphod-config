@@ -1,0 +1,7 @@
+board:
+  name: zaphod
+  vendor: petejohanson
+  socs:
+    - name: nrf52840
+      variants:
+        - name: zmk

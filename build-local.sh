@@ -12,9 +12,20 @@ set -euo pipefail
 cd "$(dirname "$0")"
 REPO="$PWD"
 CONTAINER="${CONTAINER:-docker}"
-IMAGE="${IMAGE:-zmkfirmware/zmk-build-arm:3.5}"   # matches ZMK v0.3 (config/west.yml)
 VOLUME="zaphod-zmk-workspace"
 SNIPPET="studio-rpc-usb-uart"
+
+# Board target comes from build.yaml ("zaphod" on ZMK v0.3, "zaphod//zmk" on newer ZMK).
+BOARD="${BOARD:-$(sed -n 's/^ *- board: *//p' build.yaml | head -1)}"
+
+# Pick the build image matching the ZMK revision in config/west.yml.
+ZMK_REV="$(sed -n '/name: zmk/,/import/s/^ *revision: *//p' config/west.yml)"
+case "$ZMK_REV" in
+  v0.3*) DEFAULT_IMAGE="zmkfirmware/zmk-build-arm:3.5" ;;
+  *)     DEFAULT_IMAGE="zmkfirmware/zmk-build-arm:stable" ;;
+esac
+IMAGE="${IMAGE:-$DEFAULT_IMAGE}"
+echo "Building $BOARD with ZMK $ZMK_REV using $IMAGE"
 
 "$CONTAINER" volume create "$VOLUME" >/dev/null
 
@@ -31,7 +42,7 @@ SNIPPET="studio-rpc-usb-uart"
     fi
     west update --narrow -o=--depth=1
     west zephyr-export >/dev/null
-    west build -s zmk/app -d build/zaphod -b zaphod -p auto -S $SNIPPET -- \
+    west build -s zmk/app -d build/zaphod -b $BOARD -p auto -S $SNIPPET -- \
       -DZMK_CONFIG=/zaphod-config/config \
       -DBOARD_ROOT=/zaphod-config
     mkdir -p /workspace/out && cp build/zaphod/zephyr/zmk.uf2 /workspace/out/zaphod.uf2

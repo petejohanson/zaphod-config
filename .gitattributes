@@ -1,0 +1,4 @@
+# Keep Unix line endings so build-local.sh and config files work everywhere,
+# including when Git on Windows checks them out.
+* text=auto eol=lf
+*.ps1 text eol=crlf

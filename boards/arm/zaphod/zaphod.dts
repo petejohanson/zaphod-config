@@ -7,6 +7,7 @@
 /dts-v1/;
 #include <nordic/nrf52840_qiaa.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <layouts/cuddlykeyboards/ferris.dtsi>
 
 &pinctrl {
     spi0_default: spi0_default {
@@ -39,7 +40,7 @@
 		zephyr,flash = &flash0;
 		zephyr,display = &ls0xx;
 		zmk,kscan = &kscan;
-		zmk,matrix_transform = &transform;
+		zmk,physical-layout = &cuddlykeyboards_ferris_layout;
 		zmk,battery = &vbatt;
 		zephyr,console = &cdc_acm_uart;
 	};
@@ -101,6 +102,14 @@
 	};
 };
 
+// Physical layout (used by ZMK Studio to draw the keyboard). Zaphod has the
+// same 34-key 3x5+2 arrangement as the Ferris, so reuse that layout.
+&cuddlykeyboards_ferris_layout {
+	display-name = "Zaphod";
+	transform = <&transform>;
+	kscan = <&kscan>;
+};
+
 &adc {
 	status = "okay";
 };
@@ -137,7 +146,7 @@
 	};
 };
 
-&usbd {
+zephyr_udc0: &usbd {
 	status = "okay";
 	compatible = "nordic,nrf-usbd";
 	cdc_acm_uart: cdc_acm_uart {

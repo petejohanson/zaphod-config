@@ -19,3 +19,4 @@
 ---
 include:
   - board: zaphod
+    snippet: studio-rpc-usb-uart

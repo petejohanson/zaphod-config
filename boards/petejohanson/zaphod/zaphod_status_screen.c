@@ -67,6 +67,10 @@ lv_obj_t *zmk_display_status_screen() {
 #endif
 
     center_frame = lv_obj_create(screen);
+    // A plain container gets the mono theme's "card" style (black border,
+    // padding, scrollbar), which draws black bars around the bongo cat.
+    lv_obj_remove_style_all(center_frame);
+    lv_obj_remove_flag(center_frame, LV_OBJ_FLAG_SCROLLABLE);
     lv_obj_align(center_frame, LV_ALIGN_CENTER, 0, 0);
     lv_obj_center(center_frame);
 

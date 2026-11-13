@@ -34,8 +34,9 @@ config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
 
 if ZMK_DISPLAY
 
+# 4 KB ran out when the layer name changed, leaving the screen half drawn.
 config LV_Z_MEM_POOL_SIZE
-     default 4096
+     default 16384
 
 choice LV_FONT_DEFAULT
     default LV_FONT_DEFAULT_MONTSERRAT_26

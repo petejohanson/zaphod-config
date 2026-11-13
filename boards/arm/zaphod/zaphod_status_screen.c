@@ -38,6 +38,13 @@ static struct zmk_widget_wpm_status wpm_status_widget;
 
 lv_style_t global_style;
 
+// The memory LCD loses its contents if a pogo-pin contact (power or data) blips,
+// and LVGL only redraws areas that change. Repaint everything every few
+// seconds so a wiped screen recovers (about 30 ms of SPI per repaint).
+#define ZAPHOD_FULL_REFRESH_MS 3000
+
+static void full_refresh_cb(lv_timer_t *timer) { lv_obj_invalidate(lv_scr_act()); }
+
 lv_obj_t *zmk_display_status_screen() {
     lv_obj_t *screen;
 #if !IS_ENABLED(CONFIG_ZAPHOD_BONGO_CAT)
@@ -98,5 +105,7 @@ lv_obj_t *zmk_display_status_screen() {
     zmk_widget_wpm_status_init(&wpm_status_widget, screen);
     lv_obj_align(zmk_widget_wpm_status_obj(&wpm_status_widget), LV_ALIGN_BOTTOM_RIGHT, -12, 0);
 #endif
+    lv_timer_create(full_refresh_cb, ZAPHOD_FULL_REFRESH_MS, NULL);
+
     return screen;
 }

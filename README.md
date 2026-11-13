@@ -16,7 +16,8 @@ Firmware config for the Zaphod keyboard.
   [macOS](docs/setup-mac.md) and [Windows](docs/setup-windows.md).
   Run `./build-local.sh` (Mac/Linux) or `.\build-local.ps1` (Windows) to get
   `firmware/zaphod.uf2`. Add `--flash` / `-Flash` to copy it to the keyboard
-  after you double-tap reset. Needs Docker Desktop.
+  after you double-tap reset. On a Mac this uses Apple container, OrbStack or
+  Docker Desktop; on Windows, Docker Desktop.
 - **GitHub Actions:** every push builds a `.uf2` you can download from the
   Actions tab.
 

@@ -1,0 +1,63 @@
+# Copyright (c) 2020 Pete Johanson
+# SPDX-License-Identifier: MIT
+
+if BOARD_ZAPHOD
+
+config ZMK_KEYBOARD_NAME
+	default "Zaphod"
+
+if USB_DEVICE_STACK
+
+config USB_NRFX
+	default y
+
+endif # USB_DEVICE_STACK
+
+config BT_CTLR
+	default BT
+
+config ZMK_BLE
+	default y
+
+config ZMK_USB
+	default y
+
+if ZMK_DISPLAY
+
+choice ZMK_DISPLAY_STATUS_SCREEN
+	default ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
+endchoice
+
+config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
+	select LV_USE_LABEL
+	select LV_FONT_MONTSERRAT_26
+
+config LV_Z_MEM_POOL_SIZE
+	default 8192
+
+choice LV_FONT_DEFAULT
+	default LV_FONT_DEFAULT_MONTSERRAT_26
+endchoice
+
+config SPI
+	default y
+
+config LV_Z_BITS_PER_PIXEL
+	default 1
+
+choice LV_COLOR_DEPTH
+	default LV_COLOR_DEPTH_1
+endchoice
+
+config LV_DPI_DEF
+	default 30
+
+config LV_Z_VDB_SIZE
+	default 16
+
+config LS0XX_VCOM_THREAD_PRIO
+	default 11
+
+endif # ZMK_DISPLAY
+
+endif # BOARD_ZAPHOD

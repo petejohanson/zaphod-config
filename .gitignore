@@ -1,2 +1,3 @@
 firmware/
 .zmk-workspace/
+.DS_Store

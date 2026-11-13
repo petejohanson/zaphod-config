@@ -13,6 +13,9 @@ CONFIG_GPIO=y
 CONFIG_ZMK_SLEEP=y
 
 CONFIG_ZMK_DISPLAY=y
+# The board ships its own Sharp LCD driver (zaphod_ls0xx.c), which toggles
+# VCOM in software; turn off Zephyr's.
+CONFIG_LS0XX=n
 CONFIG_LV_USE_THEME_MONO=y
 CONFIG_LV_COLOR_CHROMA_KEY_HEX=0x00FF00
 

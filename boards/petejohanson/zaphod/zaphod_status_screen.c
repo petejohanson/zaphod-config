@@ -60,6 +60,9 @@ lv_obj_t *zmk_display_status_screen() {
 
     screen = lv_obj_create(NULL);
     lv_obj_add_style(screen, &global_style, LV_PART_MAIN);
+    // A layer name wider than the screen ("BT Sync") makes the screen
+    // scrollable, and the mono theme then draws black scrollbars along the edges.
+    lv_obj_remove_flag(screen, LV_OBJ_FLAG_SCROLLABLE);
 
 #if IS_ENABLED(CONFIG_ZMK_WIDGET_BATTERY_STATUS)
     zmk_widget_battery_status_init(&battery_status_widget, screen);

@@ -50,9 +50,6 @@ endchoice
 config SPI
 	default y
 
-config LS0XX
-	default y
-
 config LV_Z_BITS_PER_PIXEL
 	default 1
 
